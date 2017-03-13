@@ -29,14 +29,14 @@
 
 	<!-- 2、View Resolver ： -->
 	<bean
-		class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
-		<property name="favorPathExtension" value="true" />
-		<property name="mediaTypes">
-			<map>
-				<entry key="json" value="application/json" />
-				<entry key="jsonp" value="application/javascript" />
-				<entry key="xml" value="application/xml" />
-			</map>
+			class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="defaultViews">
+			<list>
+				<bean
+						class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+					<property name="disableCaching" value="true" />
+				</bean>
+			</list>
 		</property>
 	</bean>
 
