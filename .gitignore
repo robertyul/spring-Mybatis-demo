@@ -1,5 +1,7 @@
 .project
 .settings/
-.classpath
+.classpath/
+.target/
 .idea/
-*.iml
+target/
+springMVC-Mybatis-demo.iml
